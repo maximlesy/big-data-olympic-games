@@ -1,0 +1,71 @@
+﻿@page "/"
+@inject HttpClient Http
+
+<div class="container d-flex align-items-center justify-content-center vh-100">
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-lg p-4">
+                <div class="text-center mb-4">
+                    <img src="resources/olympic-rings.png" alt="Olympic Rings" style="max-width: 200px;" />
+                </div>
+                <h3 class="card-title mb-4">Sport Prediction Form</h3>
+                <EditForm Model="@inputData" OnValidSubmit="HandleValidSubmit">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+
+                    <div class="form-group">
+                        <label>Weight:</label>
+                        <InputNumber @bind-Value="inputData.Weight" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Height:</label>
+                        <InputNumber @bind-Value="inputData.Height" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Age:</label>
+                        <InputNumber @bind-Value="inputData.Age" class="form-control" />
+                    </div>
+                    <div class="form-group" style="margin-bottom: 20px">
+                        <label>Sex:</label>
+                        <InputSelect @bind-Value="inputData.Sex" class="form-control">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </InputSelect>
+                    </div>
+                    <div class="text-center" style="margin-bottom: 20px">
+                        <button type="submit" class="btn btn-primary">Predict Sport</button>
+                    </div>
+                </EditForm>
+                @if (!string.IsNullOrEmpty(predictedSport))
+                {
+                    <p class="mt-4 text-center"><strong>Predicted Sport:</strong> @predictedSport</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private SportInputData inputData = new();
+    private string predictedSport;
+
+    private async Task HandleValidSubmit()
+    {
+        /*var response = await Http.PostAsJsonAsync("http://localhost:8000/predict", inputData);
+        var result = await response.Content.ReadFromJsonAsync<PredictionResponse>();
+        predictedSport = result?.PredictedSport ?? "Unknown";*/
+    }
+
+    private class SportInputData
+    {
+        public float Weight { get; set; }
+        public float Height { get; set; }
+        public int Age { get; set; }
+        public string Sex { get; set; }
+    }
+
+    private class PredictionResponse
+    {
+        public string PredictedSport { get; set; }
+    }
+}

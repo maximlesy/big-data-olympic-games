@@ -1,0 +1,66 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\School\\2023-2024 S2\\MTS4 - TI - Big Data and Business Intelligence\\Project\\notebook\\SportPredictionApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{45D52331-7FC0-467D-A49C-FEF06C13C6F2}|SportPredictionApp\\SportPredictionApp.csproj|d:\\school\\2023-2024 s2\\mts4 - ti - big data and business intelligence\\project\\notebook\\sportpredictionapp\\sportpredictionapp\\wwwroot\\custom-styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{45D52331-7FC0-467D-A49C-FEF06C13C6F2}|SportPredictionApp\\SportPredictionApp.csproj|solutionrelative:sportpredictionapp\\wwwroot\\custom-styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D52331-7FC0-467D-A49C-FEF06C13C6F2}|SportPredictionApp\\SportPredictionApp.csproj|d:\\school\\2023-2024 s2\\mts4 - ti - big data and business intelligence\\project\\notebook\\sportpredictionapp\\sportpredictionapp\\components\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45D52331-7FC0-467D-A49C-FEF06C13C6F2}|SportPredictionApp\\SportPredictionApp.csproj|solutionrelative:sportpredictionapp\\components\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{65ddf8c3-8f89-4077-a6c6-dbb8853aab13}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "custom-styles.css",
+              "DocumentMoniker": "D:\\School\\2023-2024 S2\\MTS4 - TI - Big Data and Business Intelligence\\Project\\notebook\\SportPredictionApp\\SportPredictionApp\\wwwroot\\custom-styles.css",
+              "RelativeDocumentMoniker": "SportPredictionApp\\wwwroot\\custom-styles.css",
+              "ToolTip": "D:\\School\\2023-2024 S2\\MTS4 - TI - Big Data and Business Intelligence\\Project\\notebook\\SportPredictionApp\\SportPredictionApp\\wwwroot\\custom-styles.css",
+              "RelativeToolTip": "SportPredictionApp\\wwwroot\\custom-styles.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-07T15:18:29.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.razor",
+              "DocumentMoniker": "D:\\School\\2023-2024 S2\\MTS4 - TI - Big Data and Business Intelligence\\Project\\notebook\\SportPredictionApp\\SportPredictionApp\\Components\\Pages\\Index.razor",
+              "RelativeDocumentMoniker": "SportPredictionApp\\Components\\Pages\\Index.razor",
+              "ToolTip": "D:\\School\\2023-2024 S2\\MTS4 - TI - Big Data and Business Intelligence\\Project\\notebook\\SportPredictionApp\\SportPredictionApp\\Components\\Pages\\Index.razor",
+              "RelativeToolTip": "SportPredictionApp\\Components\\Pages\\Index.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-07T14:59:23.636Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
