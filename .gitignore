@@ -143,3 +143,5 @@ $RECYCLE.BIN/
 .DS_Store
 
 _NCrunch*
+/SportPredictionApp/SportPredictionApp/SportPredictionApp.csproj.user
+/SportPredictionApp/.vs/SportPredictionApp

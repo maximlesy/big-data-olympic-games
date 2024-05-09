@@ -1,5 +1,10 @@
 ﻿@page "/"
+@using Tensorflow
 @inject HttpClient Http
+
+@using Tensorflow;
+@using static Tensorflow.Binding;
+@using NumSharp;
 
 <div class="container d-flex align-items-center justify-content-center vh-100">
     <div class="row">
@@ -49,11 +54,49 @@
     private SportInputData inputData = new();
     private string predictedSport;
 
+    protected async override Task OnInitializedAsync()
+    {
+        SportInputData data = new SportInputData
+            {
+                Weight = 100,  //
+                Height = 100,
+                Age = 30,
+                Sex = "Female"
+            };
+
+
+        try
+        {
+            var path = Path.GetFullPath("../../data-files/dnn_model.h5");  // Path to your SavedModel
+
+            using (var session = tf.Session())
+            {
+                session.graph.Import(path);
+
+                var inputTensor = tf.constant(new float[,] {
+                    { data.Weight, data.Height, data.BMI, data.Age, float.Parse(data.Sex) }
+                });
+
+                // var runner = session.GetRunner();
+                // runner.AddInput(session.graph["input_node_name"][0], inputTensor);  // Adjust the input node name
+                // runner.Fetch(session.graph["output_node_name"][0]);  // Adjust the output node name
+
+                // var output = runner.Run();
+                // predictedSport = ProcessOutput(output);  // You need to implement this method based on your output processing
+            }
+        }
+        catch (Exception ex)
+        {
+            predictedSport = $"Error: {ex.Message}";
+        }
+    }
+
     private async Task HandleValidSubmit()
     {
         /*var response = await Http.PostAsJsonAsync("http://localhost:8000/predict", inputData);
         var result = await response.Content.ReadFromJsonAsync<PredictionResponse>();
         predictedSport = result?.PredictedSport ?? "Unknown";*/
+
     }
 
     private class SportInputData
@@ -62,6 +105,7 @@
         public float Height { get; set; }
         public int Age { get; set; }
         public string Sex { get; set; }
+        public float BMI => Weight / ((Height / 100) * (Height / 100));
     }
 
     private class PredictionResponse
