@@ -1,3 +1,4 @@
+.vs/
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -145,3 +146,4 @@ $RECYCLE.BIN/
 _NCrunch*
 /SportPredictionApp/SportPredictionApp/SportPredictionApp.csproj.user
 /SportPredictionApp/.vs/SportPredictionApp
+SportPredictionBackend/random_forest_model.pkl
