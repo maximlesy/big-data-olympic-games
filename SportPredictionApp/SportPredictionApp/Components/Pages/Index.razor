@@ -10,25 +10,25 @@
                     <img src="resources/olympic-rings.png" alt="Olympic Rings" style="max-width: 200px;" />
                 </div>
                 <h3 class="card-title mb-4">Sport Prediction Form</h3>
-                <EditForm Model="@inputData" OnValidSubmit="HandleValidSubmit" FormName="SportPredictionForm">
+                <EditForm Model="@InputData" OnValidSubmit="HandleValidSubmit" FormName="SportPredictionForm">
                     <DataAnnotationsValidator />
                     <ValidationSummary />
 
                     <div class="form-group">
                         <label>Weight:</label>
-                        <InputNumber @bind-Value="inputData.Weight" class="form-control" />
+                        <InputNumber @bind-Value="InputData.Weight" class="form-control" />
                     </div>
                     <div class="form-group">
                         <label>Height:</label>
-                        <InputNumber @bind-Value="inputData.Height" class="form-control" />
+                        <InputNumber @bind-Value="InputData.Height" class="form-control" />
                     </div>
                     <div class="form-group">
                         <label>Age:</label>
-                        <InputNumber @bind-Value="inputData.Age" class="form-control" />
+                        <InputNumber @bind-Value="InputData.Age" class="form-control" />
                     </div>
                     <div class="form-group" style="margin-bottom: 20px">
                         <label>Sex:</label>
-                        <InputSelect @bind-Value="inputData.Sex" class="form-control">
+                        <InputSelect @bind-Value="InputData.Sex" class="form-control">
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </InputSelect>
@@ -48,13 +48,13 @@
 
 @code {
     [SupplyParameterFromForm]
-    private SportInputData inputData { get; set; } = new();
+    private SportInputData InputData { get; set; } = new();
     private string predictedSport;
 
     private async Task HandleValidSubmit()
     {
-        inputData.Bmi = inputData.Weight / (inputData.Height / 100 * inputData.Height / 100);
-        var response = await Http.PostAsJsonAsync("http://localhost:8000/predict", inputData);
+        InputData.Bmi = InputData.Weight / (InputData.Height / 100 * InputData.Height / 100);
+        var response = await Http.PostAsJsonAsync("http://localhost:8000/predict", InputData);
         var result = await response.Content.ReadFromJsonAsync<PredictionResponse>();
         predictedSport = result?.PredictedSport ?? "Unknown";
     }
